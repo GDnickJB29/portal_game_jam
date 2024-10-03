@@ -29,7 +29,7 @@ public class AccionBoton : MonoBehaviour
         }
     }
 
-/*
+
     // Detectar cuando un objeto sale del trigger del collider
     void OnTriggerExit(Collider otro)
     {
@@ -44,5 +44,5 @@ public class AccionBoton : MonoBehaviour
             contadorObjetosDentro = 0; // Asegurarse de que el contador no baje de 0
         }
     }
-    */
+    
 }

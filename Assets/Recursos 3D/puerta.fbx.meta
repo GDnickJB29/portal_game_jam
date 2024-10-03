@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ecde6ca25150614680d74003e6eebcd
+guid: 3623a620b150d864ca8d3aabc4e6f91c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,9 +33,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: presionar_boton
-      takeName: boton|Cube.001Action
-      internalID: -7542881465791616000
+      name: subir_puerta
+      takeName: puerta|Cube.001Action
+      internalID: -8462053448997102850
       firstFrame: 0
       lastFrame: 10
       wrapMode: 0
@@ -62,9 +62,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: soltar_boton
-      takeName: boton|Cube.001Action
-      internalID: 4690298676200851184
+      name: bajar__puerta
+      takeName: puerta|Cube.001Action
+      internalID: 836784796642550790
       firstFrame: 10
       lastFrame: 19
       wrapMode: 0
