@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using UnityEditor;
-using UnityEditor.SearchService;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,11 +21,16 @@ public class Movimiento_Jugador : MonoBehaviour
     public float tiempo_del_coyote;
     public float gravedad;
     public float fuerza_de_empuje;
+    public float empuje_del_pasto;
 
     //control del Jugador
     public CharacterController controlador_del_jugador;
+
     private Vector3 direccion_de_movimiento;
-    
+
+    //game object del pasto
+    private List<GameObject> pastos;
+
     // Variable para rastrear la escena actual
     private string escena_actual;
 
@@ -38,10 +42,28 @@ public class Movimiento_Jugador : MonoBehaviour
         controlador_del_jugador = GetComponent<CharacterController>();
         puede_saltar = false;
 
+
         float x = PlayerPrefs.GetFloat("JugadorX");
         float y = PlayerPrefs.GetFloat("JugadorY");
         float z = PlayerPrefs.GetFloat("JugadorZ");
         transform.position = new Vector3(x, y, z);
+
+
+
+        //pasto control
+        pastos = new List<GameObject>();
+        BuscarTodosLosPastos(transform, pastos);
+        string radio = "radio";
+        foreach (GameObject pasto in pastos)
+        {
+            Renderer renderer = pasto.GetComponent<Renderer>();
+            if (renderer != null && renderer.material.HasProperty(radio))
+            {
+                renderer.material.SetFloat(radio, empuje_del_pasto);
+            }
+        }
+
+
     }
 
     void Update()
@@ -60,6 +82,22 @@ public class Movimiento_Jugador : MonoBehaviour
 
         direccion_de_movimiento = Movimiento(movimiento_salto, velocidad_de_movimiento);
         controlador_del_jugador.Move(direccion_de_movimiento * Time.deltaTime);
+    }
+
+    void BuscarTodosLosPastos(Transform parent, List<GameObject> pastos)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == "pasto")
+            {
+                pastos.Add(child.gameObject);
+            }
+            // Recursivamente busca en los hijos
+            if (child.childCount > 0)
+            {
+                BuscarTodosLosPastos(child, pastos);
+            }
+        }
     }
 
     private void CoyoteTime()
