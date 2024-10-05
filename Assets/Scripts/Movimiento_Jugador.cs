@@ -36,9 +36,6 @@ public class Movimiento_Jugador : MonoBehaviour
 
     void Start()
     {
-        // Obtener el nombre de la escena actual
-        escena_actual = SceneManager.GetActiveScene().name;
-
         controlador_del_jugador = GetComponent<CharacterController>();
         puede_saltar = false;
 
@@ -70,12 +67,6 @@ public class Movimiento_Jugador : MonoBehaviour
     {
         //asginar que toco el suelo
         toca_el_suelo = controlador_del_jugador.isGrounded;
-
-        if (Input.GetKeyDown(KeyCode.E)) // Cambia la escena al presionar "E"
-        {
-            guardar_posicion_personaje();
-            Cambiar_Escena("normal"); // Cambia de escena
-        }
 
         CoyoteTime();
         Salto();
@@ -152,28 +143,6 @@ public class Movimiento_Jugador : MonoBehaviour
     }
 
 
-    public void Cambiar_Escena(string nombre_de_escena)
-    {
-        // Comprueba qué escena está actualmente activa
-        if (escena_actual == "normal")
-        {
-            SceneManager.LoadScene("cambio");
-            escena_actual = "cambio"; // Actualiza la escena actual
-        }
-        else if (escena_actual == "cambio")
-        {
-            SceneManager.LoadScene("normal");
-            escena_actual = "normal"; // Actualiza la escena actual
-        }
-    }
-
-    void guardar_posicion_personaje()
-    {
-        PlayerPrefs.SetFloat("JugadorX", transform.position.x);
-        PlayerPrefs.SetFloat("JugadorY", transform.position.y);
-        PlayerPrefs.SetFloat("JugadorZ", transform.position.z);
-        PlayerPrefs.Save();
-    }
-
+   
 
 }
