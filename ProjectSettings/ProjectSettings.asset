@@ -84,6 +84,7 @@ PlayerSettings:
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
   Force IOS Speakers When Recording: 0
+  audioSpatialExperience: 0
   deferSystemGesturesMode: 0
   hideHomeButton: 0
   submitAnalytics: 1
@@ -677,8 +678,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Portal_Game
-  metroPackageVersion: 
+  metroPackageName: PortalGame
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -686,7 +687,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Portal_Game
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Portal_Game
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

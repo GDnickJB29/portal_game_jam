@@ -10,6 +10,7 @@ public class Movimiento_Jugador : MonoBehaviour
     //Declaracion de Variables
 
     //variables privadas de uso en el movimiento y demas
+    public int targetFrameRate = 60;
     private float contador_tiempo_coyote;
     private float movimiento_salto;
     private bool puede_saltar;
@@ -36,6 +37,7 @@ public class Movimiento_Jugador : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = targetFrameRate; //los frames
         controlador_del_jugador = GetComponent<CharacterController>();
         puede_saltar = false;
 

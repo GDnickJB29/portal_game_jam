@@ -20,7 +20,7 @@ public class Detectar_Portal : MonoBehaviour
         // Si el jugador está en el portal y presiona la tecla "E", cambiamos de escena
         if (esta_en_portal && Input.GetKeyDown(KeyCode.E))
         {
-            guardar_posicion_personaje();
+           // guardar_posicion_personaje();
             Cambiar_Escena(); // Cambia de escena
         }
     }
