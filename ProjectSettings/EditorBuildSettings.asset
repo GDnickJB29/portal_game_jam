@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/nivel01/cambio.unity
+    path: Assets/Scenes/nivel01/cambio_lvl01.unity
     guid: 3a46c6669a16e0c4780d733b756fda54
   - enabled: 1
-    path: Assets/Scenes/nivel01/normal.unity
+    path: Assets/Scenes/nivel01/normal_lvl01.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
